@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>book Recommender System</title>
+    <link rel="shortcut icon" href="#">
+    <style>
+
+        table,tr,td,th{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        td{
+            padding: 10px;  
+        }
+        a{
+            color: #0000FF;
+            text-decoration: underline;
+            cursor: auto;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="book" style="text-align: left;">
+        <h1>Recommended Books for you :</h1>
+        <p>Showing results for : {{ search_user }}</p>
+        <table class="book_table" style="text-align:left">
+            <caption style="text-align:right"></caption>
+            <tr>
+                <th id='index'></th>
+                <th id='book_names' style="text-align:center">Book Title</th>
+                <th id="author_names" style="text-align:center">Author Name</th>
+            </tr>
+            <tbody class="table_body">
+                <tr>
+                    <td>1</td>
+                    <td>{{ book_names[0] }}</td>
+                    <td>{{ author_names[0] }}</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>{{ book_names[1] }}</td>
+                    <td>{{ author_names[1] }}</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>{{ book_names[2] }}</td>
+                    <td>{{ author_names[2] }}</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>{{ book_names[3] }}</td>
+                    <td>{{ author_names[3] }}</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>{{ book_names[4] }}</td>
+                    <td>{{ author_names[4] }}</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>{{ book_names[5] }}</td>
+                    <td>{{ author_names[5] }}</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>{{ book_names[6] }}</td>
+                    <td>{{ author_names[6] }}</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>{{ book_names[7] }}</td>
+                    <td>{{ author_names[7] }}</td>
+                </tr>
+                <tr>
+                    <td>9</td>
+                    <td>{{ book_names[8] }}</td>
+                    <td>{{ author_names[8] }}</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>{{ book_names[9] }}</td>
+                    <td>{{ author_names[9] }}</td>
+                </tr>
+            </tbody>
+        </table>
+      </div>
+      <br>
+
+      <div id="page">
+        <h1> Rate Your Book ! </h1>
+        <div class="center-mid-3">
+            <form action="{{ url_for('rate') }}" method="POST">
+                <!-- form for visitor information -->
+                <fieldset>
+                    <p>
+                        <legend class="center-3"> Hi there!
+                            <br> Rate the book that you read.
+                            <br/>
+                        </legend>
+                        <label class="title" for="book_name"> Name of the book </label>
+                        <input type="text" name="book_name" id="book_name">
+                        <input type="text" name="user_id" id="user_id" value="" hidden="hidden">
+                    </p>
+                    <p>
+                        <label for="rating" class="title"> Give a rating! (5 is the best!) </label>
+                        <select name="rating" id="rating">
+                            <option value="5">5</option>
+                            <option value="4">4</option>
+                            <option value="3">3</option>
+                            <option value="2">2</option>
+                            <option value="1">1</option>
+                        </select>
+                    </p>
+                </fieldset>
+              <div class="submit"><input type="submit" value="Submit" /></div>
+            </form>
+          </div>
+<!-- footer -->
+<footer>
+    <div>
+      <p> © R Karshan | 2021 </p>
+    </div>
+  </footer>
+</body>
+<script>
+    document.getElementById('user_id').value = '{{ search_user }}';
+</script>
+</html>

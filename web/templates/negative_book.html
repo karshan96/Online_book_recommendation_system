@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <link rel="shortcut icon" href="#">
+  <title>Not Found</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        a{
+            color: #0000FF;
+            text-decoration: underline;
+            cursor: auto;
+        }
+    </style>
+</head>
+<body>
+    <div style="text-align: left;">
+        <div>
+            <div class="col-xs-12 ground-color text-center">
+                    <div class="msg">OH!<span class="triangle"></span></div>
+            </div>
+                <h2 class="h1">Sorry! not found.</h2>
+                <p>The Book {{ name }} do not exists in the database.</p>
+        </div>
+            <a onClick="goBack()"> Go Back to Home Page &amp; Try Again.</a>
+    </div>
+
+    <!-- footer -->
+    <footer>
+        <div>
+          <p> © R Karshan | 2021 </p>
+        </div>
+    </footer>
+</body>
+<script>
+    function goBack() {
+      window.history.back();
+    }
+</script>
+</html>
